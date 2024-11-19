@@ -11,16 +11,16 @@
         <tr>
             <th>Nama</th>
             <th>Alamat</th>
-            <th>Nim</th>
             <th>Kelas</th>
+            <th>Nim</th>
             <th>aksi</th>
         </tr>
         @foreach ($mahasiswa as $id => $mhs)
             <tr>
                 <td>{{ $mhs->nama }}</td>
                 <td\>{{ $mhs->alamat }}</td>
-                    <td>{{ $mhs->nim }}</td>
-                    <td\>{{ $mhs->kelas }}</td>
+                    <td>{{ $mhs->kelas }}</td>
+                    <td\>{{ $mhs->nim }}</td>
                         <td>
                             <a href="{{ route('mahasiswa.edit', $mhs->id) }}" class="btn btn-warning">Edit</a>
                             <form action="{{ route('mahasiswa.hapus', $mhs->id) }}" method="POST" class="d-inline">

@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 class mahasiswaController extends Controller
 {
     function tampil()
+
     {
         $mahasiswa = mahasiswa::get();
         return view('mahasiswa.tampil', compact('mahasiswa'));
-
     }
 
     function tambah()
@@ -22,11 +22,12 @@ class mahasiswaController extends Controller
     function submit(Request $request)
     {
         $mahasiswa = new mahasiswa();
-        $mahasiswa->nama = $request->nama;
+        $mahasiswa->nama  = $request->nama;
         $mahasiswa->alamat = $request->alamat;
+        $mahasiswa->kelas  = $request->kelas;
         $mahasiswa->nim = $request->nim;
-        $mahasiswa->kelas = $request->kelas;
-        $mahasiswa->mhs = $request->mhs;
+
+
         $mahasiswa->save();
 
         return redirect()->route('mahasiswa.tampil');
@@ -41,11 +42,10 @@ class mahasiswaController extends Controller
     {
         $mahasiswa = mahasiswa::find($id);
         $mahasiswa->alamat = $request->alamat;
-        $mahasiswa->nim = $request->nim;
         $mahasiswa->kelas = $request->kelas;
+        $mahasiswa->nim = $request->nim;
         $mahasiswa->update();
         return redirect()->route('mahasiswa.tampil');
-
     }
     function delete($id)
     {

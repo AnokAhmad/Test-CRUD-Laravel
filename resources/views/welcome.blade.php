@@ -11,12 +11,9 @@
 
 <body>
     <h1 class="text-center mt-3">Welcome to my website</h1>
-
     <div class="text-center mt-5">
         <a href="{{ route('mahasiswa.tampil') }}" class="btn btn-primary">kelola mahasiswa</a>
     </div>
-
-
 </body>
 
 </html>
